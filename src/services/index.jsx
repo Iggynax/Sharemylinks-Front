@@ -9,13 +9,15 @@ export const registerUserService = async ({ email, password }) => {
       body: JSON.stringify({ email, password }),
     }
   );
-  if (response.ok) {
-    const json = await response.json();
-    return json;
-  } else {
-    const errorServ = await response.message;
+
+  const json = await response.json();
+  console.log("response:", response);
+  console.log("json:", json);
+
+  if (!response.ok) {
+    const errorServ = await json.message;
     throw new Error(errorServ || "Error en la respuesta del servidor");
   }
-
+  return json;
   //añadir validación email aquí retorno de email activacion
 };
