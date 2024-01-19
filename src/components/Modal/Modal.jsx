@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "./Modal.css";
 
 const Modal = ({ children }) => {
   return (
