@@ -11,10 +11,8 @@ const RegisterPage = () => {
 
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-
+  const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
-
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -28,11 +26,18 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const { email, password } = credentials;
+
+    if (!email || !password) {
+      setError('Completa todo los campos');
+      return;
+    }
+
     // eslint-disable-next-line no-empty
     try {
       const json = await registerUserService({
-        email: credentials.email,
-        password: credentials.password,
+        email,
+        password,
       });
       console.log(json.message);
       if (json.ok) {
@@ -55,12 +60,13 @@ const RegisterPage = () => {
   return (
     <>
       <h1>REGISTER</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <fieldset>
           <label htmlFor="email">Email : </label>
           <input
             type="email"
             id="email"
+            className="input-form"
             name="email"
             placeholder="Your email here"
             required
@@ -72,15 +78,18 @@ const RegisterPage = () => {
           <input
             type="password"
             id="password"
+            className="input-form"
             name="password"
             placeholder="Password"
             required
             onChange={handleChange}
           />
         </fieldset>
-        <button>Create Account</button>
-        {/*{error ? <p>{error}</p> : null}}*/}
+        <br />
+        <button className="boton-bonito">Create Account</button>
+        {error ? <p>{error}</p> : null}
       </form>
+
       {showModal && (
         <Modal onClose={handleModalClose}>
           <p>
