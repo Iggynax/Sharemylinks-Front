@@ -11,7 +11,7 @@ const RegisterPage = () => {
 
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  //const [error, setError] = useState("");
 
   const [showModal, setShowModal] = useState(false);
 
@@ -34,8 +34,11 @@ const RegisterPage = () => {
         email: credentials.email,
         password: credentials.password,
       });
-      console.log(json.message);
-      if (json.ok) {
+      //console.log("json:", json);
+      //console.log("response:", response);
+      //console.log(json.message);
+      //console.log(response.data.data.status);
+      if (json.status === "ok") {
         setShowModal(true);
         setCredentials({
           email: "",
@@ -43,7 +46,7 @@ const RegisterPage = () => {
         });
       }
     } catch (error) {
-      setError(error.message);
+      return error.message;
     }
   };
 
@@ -62,6 +65,7 @@ const RegisterPage = () => {
             type="email"
             id="email"
             name="email"
+            value={credentials.email}
             placeholder="Your email here"
             required
             onChange={handleChange}
@@ -73,13 +77,14 @@ const RegisterPage = () => {
             type="password"
             id="password"
             name="password"
+            value={credentials.password}
             placeholder="Password"
             required
             onChange={handleChange}
           />
         </fieldset>
-        <button>Create Account</button>
-        {/*{error ? <p>{error}</p> : null}}*/}
+        <button type="submit">Create Account</button>
+        {/*{error ? <p>{error}</p> : null}*/}
       </form>
       {showModal && (
         <Modal onClose={handleModalClose}>

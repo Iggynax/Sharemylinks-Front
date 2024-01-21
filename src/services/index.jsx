@@ -11,7 +11,7 @@ export const registerUserService = async ({ email, password }) => {
   );
 
   const json = await response.json();
-  console.log("response:", response);
+  //console.log("response:", response);
   console.log("json:", json);
 
   if (!response.ok) {
