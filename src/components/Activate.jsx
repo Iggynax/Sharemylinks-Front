@@ -4,26 +4,35 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 function Activate() {
-  const [activationSuccess, setActivationSucces] = useState(false);
+  const [activationSuccess, setActivationSuccess] = useState(false);
   const { activationCode } = useParams();
 
   useEffect(() => {
     const activationAccount = async () => {
       if (activationCode) {
         try {
-          const response = await axios.put(`/activate/${activationCode}`);
-          if (response.data.status === "ok") setActivationSucces(true);
+          const response = await axios.put(
+            `${
+              import.meta.env.VITE_API_BACKEND
+            }/users/validate/${activationCode}`
+          );
+          if (response.data.status === "Ok") setActivationSuccess(true);
           console.log(response.data);
         } catch (error) {
-          console.log();
+          console.log(error.message);
         }
       }
     };
 
     activationAccount();
   }, [activationCode]);
+  console.log("Estado de activación:", activationSuccess);
   if (!activationSuccess) {
-    return <h3>ACTIVANDO CUENTA...</h3>;
+    return (
+      <h3>
+        Para poder ingresar debes activar antes la verificación en tu email.
+      </h3>
+    );
   }
   return (
     <>
