@@ -9,10 +9,6 @@ const RegisterPage = () => {
     password: "",
   });
 
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  //const [error, setError] = useState("");
-
   const [showModal, setShowModal] = useState(false);
 
   const navigate = useNavigate();
@@ -34,10 +30,7 @@ const RegisterPage = () => {
         email: credentials.email,
         password: credentials.password,
       });
-      //console.log("json:", json);
-      //console.log("response:", response);
-      //console.log(json.message);
-      //console.log(response.data.data.status);
+
       if (json.status === "ok") {
         setShowModal(true);
         setCredentials({
@@ -90,7 +83,7 @@ const RegisterPage = () => {
         <Modal onClose={handleModalClose}>
           <p>
             {" "}
-            Registro exitoso. Por favor activa tu cuenta a través del correo
+            Registro exitoso. Por favor, activa tu cuenta a través del correo
             electrónico que te enviamos.
           </p>
           <button onClick={handleModalClose}>Ok</button>
