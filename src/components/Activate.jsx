@@ -19,7 +19,10 @@ function Activate() {
           if (response.data.status === "Ok") setActivationSuccess(true);
           console.log(response.data);
         } catch (error) {
-          console.log(error.message);
+          console.log("Error completo:", error);
+          if (error.response) {
+            console.log("Respuesta del error:", error.response);
+          }
         }
       }
     };

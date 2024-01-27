@@ -51,14 +51,14 @@ const RegisterPage = () => {
   return (
     <>
       <h1>REGISTER</h1>
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <fieldset>
           <label htmlFor="email">Email : </label>
           <input
             type="email"
             id="email"
+            className="input-form"
             name="email"
-            value={credentials.email}
             placeholder="Your email here"
             required
             onChange={handleChange}
@@ -69,16 +69,18 @@ const RegisterPage = () => {
           <input
             type="password"
             id="password"
+            className="input-form"
             name="password"
-            value={credentials.password}
             placeholder="Password"
             required
             onChange={handleChange}
           />
         </fieldset>
-        <button type="submit">Create Account</button>
+        <br />
+        <button className="boton-bonito">Create Account</button>
         {/*{error ? <p>{error}</p> : null}*/}
       </form>
+
       {showModal && (
         <Modal onClose={handleModalClose}>
           <p>

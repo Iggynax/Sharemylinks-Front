@@ -40,3 +40,50 @@
 .read-the-docs {
   color: #615d5d;
 }
+
+
+boton-bonito {
+  background-color: #747bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.boton-bonito:hover {
+  background-color: #747bff;
+  color: white;
+}
+
+.input-form {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilos para los inputs al enfocar */
+.input-form:focus {
+  outline: none;
+  border-color: #747bff;
+  box-shadow: 0 0 8px rgba(76, 84, 175, 0.6);
+}
+
+/* Estilos para el contenedor del botón y los inputs */
+.form-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
