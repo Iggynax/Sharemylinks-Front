@@ -22,6 +22,7 @@ function App() {
         <Route path="/activate/:activationCode" element={<Activate />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/links" element={<LinksPage />} />
+        <Route path="'/links/:link_id" element={<LinksPage />} /> {/*voto*/}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
 
