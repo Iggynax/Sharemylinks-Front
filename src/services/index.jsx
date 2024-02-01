@@ -67,7 +67,7 @@ export const getLinksService = async (token) => {
 };
 
 
-export const newLinkService = async ( token, url, title, description) => {
+export const newLinkService = async (token, url, title, description) => {
   const response = await fetch(
     `${import.meta.env.VITE_API_BACKEND}/links`, {
       method: "POST",
@@ -86,7 +86,7 @@ export const newLinkService = async ( token, url, title, description) => {
       throw new Error(json.message);
   }
 
-  return json.data;  //nos devuelve toda la informacion al guardar un link
+  return json.data;  
 };
 
 

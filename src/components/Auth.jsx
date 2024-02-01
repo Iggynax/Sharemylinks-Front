@@ -10,7 +10,7 @@ const Auth = () => {
       {
         user ? (
           <>
-          <span>{user.email}</span>
+          <span>¡Bienvenid@ {user.email}! </span>
 <a href="#" onClick={(e)=>{
   e.preventDefault();
   logout();

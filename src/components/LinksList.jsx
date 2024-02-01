@@ -1,5 +1,6 @@
 import LinkCard from "./LinkCard";
 
+// eslint-disable-next-line react/prop-types
 const LinksList = ({ links }) => {
 
 

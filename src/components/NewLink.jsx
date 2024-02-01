@@ -13,13 +13,15 @@ const NewLink = () => {
 
         try {
             // Llama al servicio para crear un nuevo enlace
-            await newLinkService({ url, title, description });
+           const NewLink = await newLinkService({ url, title, description });
 
             // Limpiamos los campos de entrada y el estado de error si había alguno
             setUrl("");
             setTitle("");
             setDescription("");
             setError("");
+
+            if (NewLink.token) 
 
             alert("Enlace guardado correctamente");
         } catch (error) {

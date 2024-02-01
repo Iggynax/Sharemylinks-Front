@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext,useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -12,6 +13,7 @@ export const AuthProviderComponent = ({children}) => {
     }, [user])
 
      //esto hace que se cargue el usuario
+     const navigate = useNavigate();
 
     
      const login = (userData) => {
@@ -21,6 +23,7 @@ export const AuthProviderComponent = ({children}) => {
      const logout = () => {
         setUser(null);
         localStorage.removeItem("user");
+        navigate("/");
      };
 
     
