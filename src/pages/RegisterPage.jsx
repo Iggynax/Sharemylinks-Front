@@ -24,7 +24,6 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // eslint-disable-next-line no-empty
     try {
       const json = await registerUserService({
         email: credentials.email,

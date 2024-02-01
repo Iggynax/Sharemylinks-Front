@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LoginUserService } from "../services";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const LoginPage = () => {
   const [credentials, setCredentials] = useState({
@@ -9,6 +10,7 @@ const LoginPage = () => {
   });
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,28 +29,28 @@ const LoginPage = () => {
       return;
     }
 
-    // eslint-disable-next-line no-empty
     try {
-      // eslint-disable-next-line no-undef
-      const json = await LoginUserService({
+      const dataUser = await LoginUserService({
         email,
         password
       });
-
-      console.log(json.message);
-
-      if (json.ok) {
+      
+      if (dataUser.token) { // Verificar si el token existe
         setCredentials({
           email: "",
           password: "",
         });
+       
+        login(dataUser);
+       
+        navigate("/links");
+      } else {
+        setError('Token no válido'); // error en el token
       }
-
-      navigate("/links");
     } catch (error) {
       setError(error.message);
     }
-  };
+    };
 
   return (
     <>

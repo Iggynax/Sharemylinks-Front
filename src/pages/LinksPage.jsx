@@ -1,8 +1,22 @@
+import { useContext } from "react";
+import LinksList from "../components/LinksList";
+import useLinks from "../hooks/useLinks";
+import { AuthContext } from "../context/AuthContext";
+import NewLink from "../components/NewLink";
+
 const LinksPage = () => {
+  const { links, loading, error } = useLinks();
+  const { user } = useContext(AuthContext);
+  
+  if (loading) return <p>Cargando...</p>;
+  if (error) return <p>{error}</p>;
+
   return (
     <section>
-      <h1>LINKS</h1>
-      <p>Incluir aquí listado de todos los Links</p>
+      {user && <NewLink />} {/* Utiliza el operador && para renderizar NewLink si user existe */}
+
+      <p>Aquí van los links</p>
+      <LinksList links={links} />
     </section>
   );
 };
