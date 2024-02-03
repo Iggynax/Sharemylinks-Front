@@ -1,34 +1,30 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal/Modal";
-import { AuthContext } from "../context/AuthContext";
 
 function ChangePassPage() {
   const [recoverPassCode, setRecoverPassCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
   const [showModal, setShowModal] = useState(false); // Estado para controlar la visibilidad del modal
+  const [email, setEmail] = useState("");
   const navigate = useNavigate();
-  const { user } = useContext(AuthContext);
 
   const handlePasswordChange = async () => {
     try {
-      const token = "user.token";
       const response = await fetch(
         `${import.meta.env.VITE_API_BACKEND}/users/change-password`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
           },
-          body: JSON.stringify({ code: recoverPassCode, newPassword }),
+          body: JSON.stringify({ email, code: recoverPassCode, newPassword }),
         }
       );
 
       if (response.ok) {
         setShowModal(true); // Abre el modal si la contraseña se cambia con éxito
-        // Puedes ajustar el mensaje del modal según tus necesidades
       } else {
         const data = await response.json();
         setMessage(
@@ -51,7 +47,13 @@ function ChangePassPage() {
   return (
     <div>
       <h2>Recuperación de Contraseña</h2>
-      <p>Introduce el código de recuperación y tu nueva contraseña:</p>
+      <p>Introduce tu email, código de recuperación y tu nueva contraseña:</p>
+      <input
+        type="text"
+        placeholder="Correo electrónico"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
       <input
         type="text"
         placeholder="Código de recuperación"
