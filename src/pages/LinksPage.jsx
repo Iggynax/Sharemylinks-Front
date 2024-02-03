@@ -13,7 +13,7 @@ const LinksPage = () => {
 
   return (
     <section>
-      {user && <NewLink />} {/* Utiliza el operador && para renderizar NewLink si user existe */}
+      {user && <NewLink />} 
 
       <p>Aquí van los links</p>
       <LinksList links={links} />

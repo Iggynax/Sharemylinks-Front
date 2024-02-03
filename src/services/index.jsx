@@ -110,23 +110,3 @@ export const newLinkService = async (token, url, title, description) => {
 
   return json.data;
 };
-
-export const getUserService = async ({ token }) => {
-  const response = await fetch(
-    `${import.meta.env.VITE_API_BACKEND}/users/:user_id`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
-
-  const json = await response.json();
-
-  if (!response.ok) {
-    const errorServ = await json.message;
-    throw new Error(errorServ || "Error en la respuesta del servidor");
-  }
-  return json.data.user;
-};

@@ -1,16 +1,23 @@
 /* eslint-disable react/prop-types */
-const LinkCard = ({link}) => {
-    return <article>
+/* eslint-disable no-unused-vars */
+import React from "react";
 
-        <p>{link.url} </p>
-        <p>{link.title}</p>
-        <p> {link.description}  </p>
-        <p>{link.votedByMe} </p>
-        <p>{link.average_vote} </p>
-        <span> By  {link.owner} On {new Date(link.created_at).toLocaleString()} 
-         </span>
-
-    </article>
-}
+const LinkCard = ({ link }) => {
+    return (
+        <article>
+            <a href={link.url} target="_blank" rel="noopener noreferrer">
+                {link.url}
+            </a>
+            <p>{link.title}</p>
+            <p>{link.description}</p>
+            <p>{link.votedByMe}</p>
+            <p>{link.average_vote}</p>
+            <span>
+                By {link.owner} On{" "}
+                {new Date(link.created_at).toLocaleString()}
+            </span>
+        </article>
+    );
+};
 
 export default LinkCard;
