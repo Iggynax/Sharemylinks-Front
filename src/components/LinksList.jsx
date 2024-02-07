@@ -1,16 +1,14 @@
+import React from "react";
 import LinkCard from "./LinkCard";
 
-// eslint-disable-next-line react/prop-types
-const LinksList = ({ links }) => {
-
-
+const LinksList = ({ links, onVoteUpdate }) => {
   return (
     <div>
       {links.length > 0 ? (
         <ul>
           {links.map((link) => (
             <li key={link.id}>
-              <LinkCard link={link} />
+              <LinkCard link={link} onVoteUpdate={onVoteUpdate} />
             </li>
           ))}
         </ul>
