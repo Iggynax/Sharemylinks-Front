@@ -39,7 +39,8 @@ const NewLink = () => {
 
     return (
         <>
-            <h1>New link</h1>
+            <h1> NEW LINK
+                 <link rel="stylesheet" href="" /> <link rel="stylesheet" href="" /></h1>
             <form onSubmit={handleSubmit}>
                 <fieldset>
                     <label htmlFor="url"> URL </label>
@@ -51,7 +52,7 @@ const NewLink = () => {
                         required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="title"> Title </label>
+                    <label htmlFor="title"> Titulo </label>
                     <input type="text" 
                         id="title" 
                         name="title" 
@@ -60,7 +61,7 @@ const NewLink = () => {
                         required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="description"> Description </label>
+                    <label htmlFor="description"> Descripción </label>
                     <input type="text" 
                         id="description" 
                         name="description" 
@@ -68,7 +69,7 @@ const NewLink = () => {
                         onChange={(e) => setDescription(e.target.value)} 
                         required />
                 </fieldset>
-                <button type="submit">Save</button>
+                <button type="submit">Guardar</button>
                 {error && <p>{error}</p>}
             </form>
           

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <h1>
-        <Link to={"/"}>🌐Share My Links</Link>
+       🌐Share My Links
       </h1>
       <h3>Enjoy & Link 🔗</h3>
       <nav>
