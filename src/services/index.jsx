@@ -110,3 +110,18 @@ export const newLinkService = async (token, url, title, description) => {
 
   return json.data;
 };
+
+
+export const deleteLinkService = async (token, link_id) => {
+  const response = await fetch(`${import.meta.env.VITE_API_BACKEND}/links/${link_id}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  const json = await response.json();
+  if (!response.ok) {
+    throw new Error(json.message);
+  }
+};
+
