@@ -17,6 +17,7 @@ const LinksPage = () => {
 
   return (
     <section>
+
       {user && <NewLink />}
       {""}
       <p>Aquí van los links</p>
