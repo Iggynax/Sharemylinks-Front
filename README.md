@@ -1,10 +1,29 @@
-APLICACIÓN SHARE MY LINKS
+# SHARE MY LINKS
 
--Esta aplicación se decanta por un fácil manejo, con una interfaz sencilla e intuitiva.-
+## Descripción
+Share My Links es una aplicación que permite a los usuarios compartir y guardar enlaces interesantes, así como votar por enlaces de otros usuarios. 
+Proporciona una manera fácil de descubrir y compartir contenido relevante en línea.
 
--Su utilidad le asegura a un usuario compartir y guardar los links que le parezcan interesantes, además le permite votar los links de otros
-usuarios que le puedan gustar.-
+## Configuración
+1. Clona el repositorio.
+2. Copia el archivo `.envcopy` a `.env` y ajusta la URL del backend si es necesario.
+3. Instala las dependencias utilizando `npm install`.
+4. Ejecuta la aplicación con `npm run dev`.
 
----ENDPOINTS USUARIOS---
+## Uso
+1. Regístrate o inicia sesión en la aplicación.
+2. Comparte enlaces interesantes.
+3. Explora los enlaces compartidos por otros usuarios y vota por tus favoritos.
 
----ENDPOINTS LINKS---
+## Estructura del proyecto
+- `src/`: Contiene el código fuente de la aplicación.
+  - `components/`: Componentes de React reutilizables.
+  - `context/`: Contextos de React para la gestión del estado.
+  - `hooks/`: Hooks personalizados para la lógica de la aplicación.
+  - `pages/`: Páginas de la aplicación.
+  - `services/`: Servicios para la comunicación con el backend.
+  - `styles/`: Estilos y archivos de CSS.
+- `public/`: Archivos públicos, como imágenes y favicon.
+
+## Créditos
+- CSS
