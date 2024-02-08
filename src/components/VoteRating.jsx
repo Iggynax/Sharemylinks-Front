@@ -45,7 +45,7 @@ function VoteRating({ link_id, initialValue = 0, onVoteUpdate }) {
 
   return (
     <Box>
-      <h3>Vota este link: </h3>
+      
       <Rating
         name={`link-rating-${link_id}`}
         value={value}
