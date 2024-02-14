@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { LoginUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { playClickBeep } from "../services";
 
 import "./LoginPage.css";
 
@@ -82,7 +83,9 @@ const LoginPage = () => {
           onChange={handleChange}
         />
 
-        <button className="btn">Entrar</button>
+        <button className="btn" onClick={playClickBeep}>
+          Entrar
+        </button>
         {error ? <p>{error}</p> : null}
       </form>
     </>

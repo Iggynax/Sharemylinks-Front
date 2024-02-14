@@ -2,6 +2,7 @@ import { useState } from "react";
 import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal/Modal";
+import { playClickBeep } from "../services";
 
 const RegisterPage = () => {
   const [credentials, setCredentials] = useState({
@@ -74,7 +75,9 @@ const RegisterPage = () => {
         />
 
         <br />
-        <button className="btn">Aceptar</button>
+        <button className="btn" onClick={playClickBeep}>
+          Aceptar
+        </button>
         {/*{error ? <p>{error}</p> : null}*/}
       </form>
 

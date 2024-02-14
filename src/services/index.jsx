@@ -133,3 +133,17 @@ export const playClickSound = () => {
     clickSound.play();
   }
 };
+
+export const playClickBeep = () => {
+  const clickBeep = document.getElementById("clickBeep");
+  if (clickBeep) {
+    clickBeep.play();
+  }
+};
+
+export const playClickInit = () => {
+  const clickInit = document.getElementById("clickInit");
+  if (clickInit) {
+    clickInit.play();
+  }
+};

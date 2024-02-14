@@ -1,12 +1,13 @@
 import Auth from "./Auth";
 import { Link } from "react-router-dom";
+import { playClickInit } from "../services";
 
 const Header = () => {
   return (
     <header>
       <section className="nav">
         <h1>
-          <Link to={"/"}>
+          <Link to={"/"} onClick={playClickInit}>
             {" "}
             <h1>🌐 Share My Links 🌐 </h1>
             <hr />
