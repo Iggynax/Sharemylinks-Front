@@ -4,8 +4,8 @@ import { passRecoveryService } from "../services";
 
 import Modal from "./Modal/Modal";
 import "./Modal/Modal.css";
-//import "./PassRecovery.css";
 
+// eslint-disable-next-line react/prop-types
 function PassRecovery({ handleModal }) {
   const [emailForReset, setEmailForReset] = useState("");
   const [resetMessage, setResetMessage] = useState("");
@@ -35,30 +35,29 @@ function PassRecovery({ handleModal }) {
 
   return (
     <Modal>
-      <div className="modal-backdrop">
-        <form onSubmit={handlePasswordReset} className="modal-content">
-          <div>
-            <label htmlFor="email-reset">
-              Introduce tu email para restablecer tu contraseña :
-              <hr />
-              <input
-                required
-                type="email"
-                id="email-reset"
-                value={emailForReset}
-                onChange={(e) => setEmailForReset(e.target.value)}
-                placeholder="Ingresa tu correo"
-              />
-            </label>
-            <hr />
-          </div>
-          <button type="submit" className="btn-enviar">
-            Enviar
-          </button>
-          <button onClick={handleModal}>Cancelar</button>
-        </form>
-        {resetMessage && <p>{resetMessage}</p>}
-      </div>
+      <form className="" onSubmit={handlePasswordReset}>
+        <div className="modal-content">
+          <label htmlFor="email-reset">
+            Introduce tu email para restablecer tu contraseña :
+          </label>
+
+          <input
+            required
+            type="email"
+            id="email-reset"
+            value={emailForReset}
+            onChange={(e) => setEmailForReset(e.target.value)}
+            placeholder="Ingresa tu correo"
+          />
+        </div>
+        <button type="submit" className="btn-enviar">
+          Enviar
+        </button>
+        <button onClick={handleModal} className="btn-cancelar">
+          Cancelar
+        </button>
+      </form>
+      {resetMessage && <p>{resetMessage}</p>}
     </Modal>
   );
 }

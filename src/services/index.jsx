@@ -111,16 +111,25 @@ export const newLinkService = async (token, url, title, description) => {
   return json.data;
 };
 
-
 export const deleteLinkService = async (token, id) => {
-  const response = await fetch(`${import.meta.env.VITE_API_BACKEND}/links/${id}`, {
-    method: "DELETE",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const response = await fetch(
+    `${import.meta.env.VITE_API_BACKEND}/links/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
   const json = await response.json();
   if (!response.ok) {
     throw new Error(json.message);
+  }
+};
+
+export const playClickSound = () => {
+  const clickSound = document.getElementById("clickSound");
+  if (clickSound) {
+    clickSound.play();
   }
 };

@@ -3,8 +3,8 @@ import "./Modal.css";
 
 const Modal = ({ children }) => {
   return (
-    <div className="modal-backdrop">
-      <div className="modal-content">{children}</div>
+    <div className="nav-modal-click">
+      <div className="">{children}</div>
     </div>
   );
 };
