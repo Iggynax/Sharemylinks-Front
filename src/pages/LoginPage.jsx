@@ -60,7 +60,7 @@ const LoginPage = () => {
       <h2 className="nav-login">LOGIN</h2>
 
       <form className="nav-access-login" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">Email : </label>
         <input
           type="email"
           id="email"
@@ -71,7 +71,7 @@ const LoginPage = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor="password">Password: </label>
+        <label htmlFor="password">Password : </label>
         <input
           type="password"
           id="password"

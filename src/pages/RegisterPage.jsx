@@ -49,34 +49,32 @@ const RegisterPage = () => {
 
   return (
     <>
-      <h1>REGISTER</h1>
-      <form className="form-container" onSubmit={handleSubmit}>
-        <fieldset>
-          <label htmlFor="email">Email : </label>
-          <input
-            type="email"
-            id="email"
-            className="input-form"
-            name="email"
-            placeholder="Your email here"
-            required
-            onChange={handleChange}
-          />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="password">Password : </label>
-          <input
-            type="password"
-            id="password"
-            className="input-form"
-            name="password"
-            placeholder="Password"
-            required
-            onChange={handleChange}
-          />
-        </fieldset>
+      <h2 className="nav-login">REGISTRO</h2>
+      <form className="nav-access-login" onSubmit={handleSubmit}>
+        <label htmlFor="email">Email : </label>
+        <input
+          type="email"
+          id="email"
+          className="input-form"
+          name="email"
+          placeholder="Tu email"
+          required
+          onChange={handleChange}
+        />
+
+        <label htmlFor="password">Password : </label>
+        <input
+          type="password"
+          id="password"
+          className="input-form"
+          name="password"
+          placeholder="Password"
+          required
+          onChange={handleChange}
+        />
+
         <br />
-        <button className="boton-bonito">Create Account</button>
+        <button className="btn">Aceptar</button>
         {/*{error ? <p>{error}</p> : null}*/}
       </form>
 
