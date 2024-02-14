@@ -28,7 +28,7 @@ body {
 .slider h1 {
   font-family: "Josefin Sans", sans-serif;
   font-size: 4vw;
-  padding-bottom: 0, 2rem;
+  padding-bottom: 0.8rem;
   letter-spacing: 0.5rem;
   color: #03dac6;
   transition: all 0.3s ease;

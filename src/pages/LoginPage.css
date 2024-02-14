@@ -37,6 +37,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 50%;
+  max-width: 400px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -85,4 +86,7 @@ label {
 
 .btn:hover {
   opacity: 0.8;
+}
+.btn:active {
+  transform: scale(0.95); /* Escala ligeramente el botón cuando se hace clic */
 }

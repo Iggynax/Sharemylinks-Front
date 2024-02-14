@@ -35,7 +35,7 @@ function PassRecovery({ handleModal }) {
 
   return (
     <Modal>
-      <form className="" onSubmit={handlePasswordReset}>
+      <form className="modal-content" onSubmit={handlePasswordReset}>
         <div className="modal-content">
           <label htmlFor="email-reset">
             Introduce tu email para restablecer tu contraseña :
