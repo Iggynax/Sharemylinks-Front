@@ -1,4 +1,3 @@
-// LinksPage.jsx
 import React, { useContext } from "react";
 import LinksList from "../components/LinksList";
 import useLinks from "../hooks/useLinks";
@@ -18,11 +17,14 @@ const LinksPage = () => {
 
   return (
     <section>
-
       {user && <NewLink />}
       {""}
       <p>ULTIMAS NOVEDADES</p>
-      <LinksList links={links} onVoteUpdate={handleVoteUpdate} addLink={addLink} />
+      <LinksList
+        links={links}
+        onVoteUpdate={handleVoteUpdate}
+        addLink={addLink}
+      />
     </section>
   );
 };

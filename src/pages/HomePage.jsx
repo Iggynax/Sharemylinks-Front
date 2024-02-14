@@ -6,15 +6,14 @@ function HomePage() {
 
   const handleModal = () => setShowModal((prev) => !prev);
   return (
-    <section>
-      
-      <div className="edit-profile-container">
-        <a href="#" onClick={handleModal} className="edit-profile-link">
+    <>
+      <section className="nav-container-modal">
+        <a href="#" onClick={handleModal}>
           ¿Olvidaste tu contraseña?, haz click AQUÍ.
-        </a>
+        </a>{" "}
         {showModal && <PassRecovery handleModal={handleModal} />}
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 
