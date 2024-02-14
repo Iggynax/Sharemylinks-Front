@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { LoginUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { playClickBeep } from "../services";
 
 import "./LoginPage.css";
 
@@ -60,7 +61,7 @@ const LoginPage = () => {
       <h2 className="nav-login">LOGIN</h2>
 
       <form className="nav-access-login" onSubmit={handleSubmit}>
-        <label htmlFor="email">Email: </label>
+        <label htmlFor="email">Email : </label>
         <input
           type="email"
           id="email"
@@ -71,7 +72,7 @@ const LoginPage = () => {
           onChange={handleChange}
         />
 
-        <label htmlFor="password">Password: </label>
+        <label htmlFor="password">Password : </label>
         <input
           type="password"
           id="password"
@@ -82,7 +83,9 @@ const LoginPage = () => {
           onChange={handleChange}
         />
 
-        <button className="btn">Entrar</button>
+        <button className="btn" onClick={playClickBeep}>
+          Entrar
+        </button>
         {error ? <p>{error}</p> : null}
       </form>
     </>
