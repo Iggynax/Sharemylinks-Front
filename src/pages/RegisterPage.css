@@ -1,0 +1,59 @@
+/* Estilos Modal registerpagemodal */
+
+.register-mail-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 120%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 95%;
+  z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+}
+.register-content-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  margin: 5px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 3px rgba(89, 0, 255, 0.5);
+  background: rgba(89, 0, 255);
+  width: 90%;
+  max-width: 300px;
+}
+
+.register-content-modal p {
+  font-size: 18px; /* Tamaño de fuente para el texto del modal */
+  color: #ffffff; /* Color del texto del modal */
+}
+.btn-register {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-color: #1e1f26;
+  border-radius: 5px;
+  background-color: #05d5fa;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.btn-register:hover {
+  opacity: 0.8;
+}
+.btn-register:active {
+  transform: scale(0.95); /* Escala ligeramente el botón cuando se hace clic */
+}
+
+/* Media query para pantalla más pequeñas */
+
+@media (min-width: 470px) {
+  .register-mail-modal {
+    top: 100%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+}

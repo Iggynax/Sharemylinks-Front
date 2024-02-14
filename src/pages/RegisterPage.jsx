@@ -3,7 +3,7 @@ import { registerUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal/Modal";
 import { playClickBeep } from "../services";
-
+import "./RegisterPage.css";
 const RegisterPage = () => {
   const [credentials, setCredentials] = useState({
     email: "",
@@ -82,14 +82,20 @@ const RegisterPage = () => {
       </form>
 
       {showModal && (
-        <Modal onClose={handleModalClose}>
-          <p>
-            {" "}
-            Registro exitoso. Por favor, activa tu cuenta a través del correo
-            electrónico que te enviamos.
-          </p>
-          <button onClick={handleModalClose}>Ok</button>
-        </Modal>
+        <div className="register-mail-modal">
+          <Modal onClose={handleModalClose} className="register-content-modal">
+            <div className="register-content-modal">
+              <p className="register-content-modal">
+                {" "}
+                Registro exitoso. Por favor, activa tu cuenta a través del
+                correo electrónico que te enviamos.
+              </p>
+              <button className="btn-register" onClick={handleModalClose}>
+                Ok
+              </button>
+            </div>
+          </Modal>
+        </div>
       )}
     </>
   );
