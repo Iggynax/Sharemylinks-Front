@@ -3,7 +3,6 @@ import { LoginUserService } from "../services";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { playClickBeep } from "../services";
-
 import "./LoginPage.css";
 
 const LoginPage = () => {
