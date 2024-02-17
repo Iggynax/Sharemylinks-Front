@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { registerUserService } from "../services";
+import { playClickInit } from "../services";
 import Modal from "../components/Modal/Modal";
+import "./ChangePassPage.css";
 
 function ChangePassPage() {
   const [recoverPassCode, setRecoverPassCode] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [message, setMessage] = useState("");
-  const [showModal, setShowModal] = useState(false); // Estado para controlar la visibilidad del modal
+  const [showModal, setShowModal] = useState(false);
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
 
-  const handlePasswordChange = async () => {
+  const handlePasswordChange = async (e) => {
+    e.preventDefault();
+
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_BACKEND}/users/change-password`,
@@ -45,37 +50,62 @@ function ChangePassPage() {
   };
 
   return (
-    <div>
-      <h2>Recuperación de Contraseña</h2>
-      <p>Introduce tu email, código de recuperación y tu nueva contraseña:</p>
-      <input
-        type="text"
-        placeholder="Correo electrónico"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Código de recuperación"
-        value={recoverPassCode}
-        onChange={(e) => setRecoverPassCode(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Nueva contraseña"
-        value={newPassword}
-        onChange={(e) => setNewPassword(e.target.value)}
-      />
-      <button onClick={handlePasswordChange}>Cambiar Contraseña</button>
-      <p>{message}</p>
-      {showModal && (
-        <Modal>
-          <h2>Contraseña cambiada con éxito</h2>
+    <>
+      <h2 className="nav-recovery">
+        Recuperación de Contraseña
+        <br />
+        Share My Links
+      </h2>
+      <form className="nav-access-recovery" onSubmit={handlePasswordChange}>
+        <p>Introduce tu email, código de recuperación y tu nueva contraseña:</p>
+        <label htmlFor="email">Email : </label>
 
-          <button onClick={handleModalClose}>OK</button>
-        </Modal>
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          className="input-form"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="email">Código de recuperación : </label>
+
+        <input
+          type="text"
+          placeholder="Introduce el código del email"
+          className="input-form"
+          value={recoverPassCode}
+          onChange={(e) => setRecoverPassCode(e.target.value)}
+        />
+        <label htmlFor="password">Nueva contraseña : </label>
+
+        <input
+          type="password"
+          placeholder="Nueva contraseña"
+          className="input-form"
+          value={newPassword}
+          onChange={(e) => setNewPassword(e.target.value)}
+        />
+        <button type="submit" className="btn">
+          Cambiar Contraseña
+        </button>
+        <p>{message}</p>
+      </form>
+      {showModal && (
+        <div className="register-mail-modal">
+          <Modal onClose={handleModalClose} className="register-content-modal">
+            <div className="register-content-modal">
+              <p className="register-content-modal">
+                {" "}
+                Contraseña cambiada con éxito!!
+              </p>
+              <button className="btn-register" onClick={handleModalClose}>
+                Ok
+              </button>
+            </div>
+          </Modal>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 

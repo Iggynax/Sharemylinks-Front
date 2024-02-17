@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "../components/Modal/Modal";
 import { playClickBeep } from "../services";
 import "./RegisterPage.css";
+
 const RegisterPage = () => {
   const [credentials, setCredentials] = useState({
     email: "",
