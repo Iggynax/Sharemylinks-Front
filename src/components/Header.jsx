@@ -9,8 +9,7 @@ const Header = () => {
         <h1>
           <Link to={"/"} onClick={playClickInit}>
             {" "}
-            <h1>🌐 Share My Links 🌐 </h1>
-            <hr />
+            <h1>🌐 Share My Links 🌐</h1>
           </Link>
         </h1>
         <h3 className="span loader">

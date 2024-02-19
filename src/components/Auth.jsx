@@ -7,10 +7,10 @@ const Auth = () => {
   const { user, logout } = useContext(AuthContext);
 
   return (
-    <ul>
+    <ul className="nav-logout">
       {user ? (
         <>
-          <span>¡Bienvenid@ {user.email}! </span>
+          <h4>¡Bienvenid@ {user.email}! </h4>
           <a
             href="#"
             onClick={(e) => {
@@ -18,7 +18,8 @@ const Auth = () => {
               logout();
             }}
           >
-            Logout
+            <span className="material-symbols-outlined"> Logout</span>
+
           </a>
         </>
       ) : (

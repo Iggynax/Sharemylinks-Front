@@ -28,7 +28,6 @@ const LinkCard = ({ link, onVoteUpdate  }) => {
   };
 
   
-
   return (
     <article>
         <fieldset>

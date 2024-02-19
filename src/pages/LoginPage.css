@@ -2,7 +2,6 @@ body {
   font-family: "ROBOTO", sans-serif;
   color: #03dac6;
   font-size: 1rem;
-  overflow: hidden;
 }
 
 .nav {
@@ -58,6 +57,7 @@ h2 {
   text-align: center;
 }
 
+
 /* Estilos para los campos del formulario */
 
 label {
@@ -89,4 +89,30 @@ label {
 }
 .btn:active {
   transform: scale(0.95); /* Escala ligeramente el botón cuando se hace clic */
+}
+
+.nav-new-link {
+  position: sticky;
+  margin: 20px auto;
+  padding: 50px;
+  bottom: 30px;
+  border: 1px solid #020202;
+  border-radius: 5px;
+  width: 50%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(29, 27, 27, 0.8); 
+  z-index: 10;
+}
+
+  
+.input-new {
+  width: 100%;
+  margin: 15px auto;
+  padding: 12px;
+  border: 1px solid #f328af;
+  border-radius: 7px;
+  background-color: #ffffff;
 }
