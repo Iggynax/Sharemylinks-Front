@@ -91,9 +91,29 @@ label {
   transform: scale(0.95); /* Escala ligeramente el botón cuando se hace clic */
 }
 
+/*estilos linkpage*/
+
+
+h4{
+  color: #03dac6;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 15px;
+}
+
+.nav-new {
+  position: absolute;
+  width: 100%;
+  height: 6%;
+  left: 0;
+  top: 42%;
+  background: #c53d78;
+  border-radius: 3px;
+  z-index: 10;
+}
+
 .nav-new-link {
   position: sticky;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 50px;
   bottom: 30px;
   border: 1px solid #020202;
@@ -121,8 +141,6 @@ label {
   position: sticky;
   margin: 20px auto;
   padding: 20px;
-  bottom: 30px;
-  border: 1px solid #020202;
   border-radius: 5px;
   width: 50%;
   max-width: 400px;
@@ -131,14 +149,66 @@ label {
   text-align: center;
   background: rgba(29, 27, 27, 0.8); 
   z-index: 10;
+  overflow: hidden; 
 }
 
-h5 {
-  font-size: 2vw;
-  letter-spacing: 0.3rem;
+.link-card h4{
+  color:#03dac6;
+  margin-top: 10px;
   font-family: "ROBOTO", sans-serif;
-  font-weight: 600;
-  color: #ddea47;
-  z-index: 4;
+  font-size: 15px;
+  
 }
 
+.link-card h5 {
+  font-family: "ROBOTO", sans-serif;
+  font-size: 15px;
+  color: #ddea47;
+  margin-top: 10px;
+
+}
+
+.link-card section {
+  margin-top: 10px;
+}
+
+.link-card a {
+  color:#a411b2;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.link-card p {
+  color:#03dac6;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 15px;
+}
+
+
+.error-page{
+  position: sticky;
+  margin: 10px auto;
+  width: 50%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 10;
+}
+
+.error-page h1{
+  font-size:7vh
+}
+
+.error-page p{
+  color:rgb(39, 186, 186);
+  margin-top:40px;
+  font-family: "ROBOTO", sans-serif;
+  font-size:1.5vw;
+}
+
+.error-page a{
+  color:#da03d6;
+  font-size: 2vw;
+}

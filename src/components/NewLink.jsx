@@ -40,7 +40,7 @@ const NewLink = () => {
 
     return (
         <>
-    <h2 className="nav-login">NEW LINK</h2>
+    <h2 className="nav-new">NEW LINK</h2>
     
       <form  className="nav-new-link" onSubmit={handleSubmit}>
       

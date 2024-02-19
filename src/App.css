@@ -178,12 +178,14 @@ p {
 
 @media (min-width: 740px) and (min-height: 900px) {
   .nav h1,
-  .slider h1 {
+  .slider h1 
+  {
     font-size: 5vw;
   }
 
   .nav h2,
-  .slider h2 {
+  .slider h2
+  {
     font-size: 3vw;
   }
 
