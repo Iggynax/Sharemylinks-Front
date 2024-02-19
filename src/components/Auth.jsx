@@ -5,18 +5,19 @@ import { playClickSound } from "../services";
 
 const Auth = () => {
   const { user, logout } = useContext(AuthContext);
-
+console.log (user.email)
   return (
     <ul className="nav-logout">
       {user ? (
         <>
-          <h4>¡Bienvenid@ {user.email}! </h4>
+          <h4>¡Bienvenid@ {user.email} </h4>
           <a
             href="#"
             onClick={(e) => {
               e.preventDefault();
               logout();
             }}
+            
           >
             <span className="material-symbols-outlined"> Logout</span>
 
