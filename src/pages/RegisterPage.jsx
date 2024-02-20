@@ -6,6 +6,7 @@ import { playClickBeep } from "../services";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
+  const [error, setError] = useState("");
   const [credentials, setCredentials] = useState({
     email: "",
     password: "",
@@ -40,7 +41,7 @@ const RegisterPage = () => {
         });
       }
     } catch (error) {
-      return error.message;
+      return setError (error.message);
     }
   };
 
@@ -79,7 +80,7 @@ const RegisterPage = () => {
         <button className="btn" onClick={playClickBeep}>
           Aceptar
         </button>
-        {/*{error ? <p>{error}</p> : null}*/}
+        {error && <p>{error}</p>}
       </form>
 
       {showModal && (
@@ -94,7 +95,7 @@ const RegisterPage = () => {
               <button className="btn-register" onClick={handleModalClose}>
                 Ok
               </button>
-            </div>
+              </div>
           </Modal>
         </div>
       )}

@@ -28,39 +28,34 @@ const LinkCard = ({ link, onVoteUpdate  }) => {
   };
 
   
-
   return (
-    <article>
-        <fieldset>
+    <article className="link-card">
         <a href={link.url} target="_blank" rel="noopener noreferrer">
                 {link.url}
             </a>
-      <p>Título:{link.title}</p>
-      <p>Descripción: {link.description} </p>
-      
-      <p>Ranking :{link.average_vote} </p>
+      <h5>Título:</h5>  {link.title}
+      <h5>Descripción: </h5> {link.description}
+      <h5>Ranking : </h5> {link.average_vote} 
       <VoteRating
         link_id={link.id}
         initialValue={link.initialVoteValue}
         onVoteUpdate={onVoteUpdate}
       />
       {renderVoteMessage()}
-       <span>
+       <h4>
         {" "}
         {new Date(link.created_at).toLocaleString()}
-      </span>
+      </h4>
 
       {user && user.id === link.user_id ? (
       <section>
-        <button onClick={() => deleteLink(link.id)}> Borrar </button> 
+        <button onClick={() => deleteLink(link.id)}> 
+        <span className="material-symbols-outlined">delete</span>
+        </button> 
         {error ? <p>{error}</p> : null}
         </section>
         ) : null }
-        </fieldset>
-      
-
-     
-     
+       
     </article>
   );
 };

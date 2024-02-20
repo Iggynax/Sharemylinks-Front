@@ -3,6 +3,7 @@ import React, { useContext, useState } from "react";
 import { newLinkService } from "../services";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "../components/Modal/Modal";
+import { playClickBeep } from "../services";
 
 const NewLink = () => {
     const [error, setError] = useState("");
@@ -39,46 +40,57 @@ const NewLink = () => {
 
     return (
         <>
-            <h1> NEW LINK
-                 <link rel="stylesheet" href="" /> <link rel="stylesheet" href="" /></h1>
-            <form onSubmit={handleSubmit}>
-                <fieldset>
-                    <label htmlFor="url"> URL </label>
-                    <input type="text" 
-                        id="url" 
-                        name="url" 
-                        value={url} 
-                        onChange={(e) => setUrl(e.target.value)} 
-                        required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="title"> Titulo </label>
-                    <input type="text" 
-                        id="title" 
-                        name="title" 
-                        value={title} 
-                        onChange={(e) => setTitle(e.target.value)} 
-                        required />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="description"> Descripción </label>
-                    <input type="text" 
-                        id="description" 
-                        name="description" 
-                        value={description} 
-                        onChange={(e) => setDescription(e.target.value)} 
-                        required />
-                </fieldset>
-                <button type="submit">Guardar</button>
-                {error && <p>{error}</p>}
-            </form>
-          
-            {showModal && (
-                <Modal onClose={handleCloseModal}>
-                    <p>Enlace guardado correctamente</p>
-                    <button onClick={handleCloseModal}>OK</button> 
-                </Modal>
-            )}
+    <h2 className="nav-new">NEW LINK</h2>
+    
+      <form  className="nav-new-link" onSubmit={handleSubmit}>
+      
+          <label htmlFor="url">URL:</label>
+          <input
+            type="text"
+            id="url"
+            className="input-new"
+            name="url"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            required
+          />
+          <label htmlFor="title">Titulo:</label>
+          <input
+            type="text"
+            id="title"
+            className="input-new"
+            name="title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+          <label htmlFor="description">Descripción:</label>
+          <input
+            type="text"
+            id="description"
+            className="input-new"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            required
+          />
+  
+        <button className="btn" onClick={playClickBeep}>
+          Guardar</button>
+        {error && <p>{error}</p>}
+      </form>
+  
+  {showModal && (
+    <div className="register-mail-modal">
+    <Modal onClose={handleCloseModal} className="register-content-modal">
+    <div className="register-content-modal">
+              <p className="register-content-modal">
+      Enlace guardado correctamente</p>
+      <button onClick={handleCloseModal}>OK</button>
+      </div>
+    </Modal>
+    </div>
+  )}
         </>
     );
 };

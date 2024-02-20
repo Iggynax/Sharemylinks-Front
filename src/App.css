@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   font-family: "ROBOTO", sans-serif;
 }
@@ -11,6 +12,7 @@ body {
 .nodot {
   list-style: none;
 }
+
 
 .nav,
 .slider {
@@ -65,10 +67,11 @@ a {
   color: rgb(21, 1, 202);
   text-decoration: none;
 }
+
 p {
-  color: #000000;
+  color: #ebe3e3;
   text-align: center;
-  font-family: "ROBOTO", sans-serif;
+  font-family: sans-serif;
 }
 
 .nav-container {
@@ -132,6 +135,23 @@ p {
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
+
+.nav-logout {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  width: 100%;
+  justify-content: center;
+  margin-top: 30px;
+  text-align: center;
+  box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  color: #03dac6;
+  letter-spacing: 0.5rem;
+  font-size: 1vw;
+}
+
+
 .nav-tab:hover {
   color: #1e1f26;
   background: #03dac6;
@@ -158,12 +178,14 @@ p {
 
 @media (min-width: 740px) and (min-height: 900px) {
   .nav h1,
-  .slider h1 {
+  .slider h1 
+  {
     font-size: 5vw;
   }
 
   .nav h2,
-  .slider h2 {
+  .slider h2
+  {
     font-size: 3vw;
   }
 
