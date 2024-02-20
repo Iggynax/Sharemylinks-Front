@@ -58,6 +58,7 @@ h2 {
 }
 
 
+
 /* Estilos para los campos del formulario */
 
 label {
@@ -93,11 +94,10 @@ label {
 
 /*estilos linkpage*/
 
-
-h4{
+h3{
   color: #03dac6;
   font-family: "ROBOTO", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .nav-new {
@@ -114,7 +114,7 @@ h4{
 .nav-new-link {
   position: sticky;
   margin: 30px auto;
-  padding: 50px;
+  padding: 40px;
   bottom: 30px;
   border: 1px solid #020202;
   border-radius: 5px;
@@ -127,11 +127,10 @@ h4{
   z-index: 10;
 }
 
-  
 .input-new {
   width: 100%;
   margin: 15px auto;
-  padding: 12px;
+  padding: 8px;
   border: 1px solid #f328af;
   border-radius: 7px;
   background-color: #ffffff;
@@ -144,47 +143,65 @@ h4{
   border-radius: 5px;
   width: 50%;
   max-width: 400px;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-  background: rgba(29, 27, 27, 0.8); 
+  background: rgba(216, 213, 213, 0.8); 
   z-index: 10;
-  overflow: hidden; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.link-card:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0px 5px 15px rgba(255, 0, 157,1); 
 }
 
 .link-card h4{
-  color:#03dac6;
+  color:#010101;
   margin-top: 10px;
   font-family: "ROBOTO", sans-serif;
   font-size: 15px;
   
 }
 
+
 .link-card h5 {
   font-family: "ROBOTO", sans-serif;
   font-size: 15px;
-  color: #ddea47;
+  color: #00ffee;
   margin-top: 10px;
-
-}
-
-.link-card section {
-  margin-top: 10px;
-}
-
-.link-card a {
-  color:#a411b2;
-  font-family: "ROBOTO", sans-serif;
-  font-size: 30px;
-  font-weight: 500;
+  white-space: normal;
+  display: inline-block;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
 }
 
 .link-card p {
-  color:#03dac6;
+  color: #ffff00;
   font-family: "ROBOTO", sans-serif;
   font-size: 15px;
 }
 
+.link-card a {
+  color: #f328af;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 1.5em; 
+  font-weight: 500;
+  max-width: 80%; 
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' ,
+  'wght' 200,
+  'GRAD' 0,
+  'opsz' 80
+}
 
 .error-page{
   position: sticky;
@@ -212,3 +229,18 @@ h4{
   color:#da03d6;
   font-size: 2vw;
 }
+
+@media (min-width: 740px) and (min-height: 900px) {
+  h3
+  {
+    font-size: 5px;
+  }
+
+}
+
+@media only screen and (min-width: 360px) {
+  h3 {
+    font-size: 20px;
+    letter-spacing: 0.2vw;
+  }
+  }

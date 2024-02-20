@@ -27,7 +27,7 @@ const useLinks = () => {
 
   
 
-  return { links, loading, error, reloadLinks: loadLinks };
+  return { links, setLinks, loading, error, reloadLinks: loadLinks };
   //función loadLinks renombrada como reloadLinks, permite una recarga de los links.
 };
 

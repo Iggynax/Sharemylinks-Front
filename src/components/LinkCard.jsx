@@ -33,9 +33,9 @@ const LinkCard = ({ link, onVoteUpdate  }) => {
         <a href={link.url} target="_blank" rel="noopener noreferrer">
                 {link.url}
             </a>
-      <h5>Título:</h5>  {link.title}
-      <h5>Descripción: </h5> {link.description}
-      <h5>Ranking : </h5> {link.average_vote} 
+      <h4>Título:</h4>  <h5>{link.title}</h5>
+      <h4>Descripción: </h4> <h5>{link.description}</h5>
+      <h4>Ranking : </h4> <h5>{link.average_vote}</h5> 
       <VoteRating
         link_id={link.id}
         initialValue={link.initialVoteValue}

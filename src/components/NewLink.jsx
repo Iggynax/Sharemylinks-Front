@@ -1,11 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from "react";
-import { newLinkService } from "../services";
+import { getLinksService, newLinkService } from "../services";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "../components/Modal/Modal";
 import { playClickBeep } from "../services";
 
-const NewLink = () => {
+const NewLink = ({setLinks}) => {
     const [error, setError] = useState("");
     const [url, setUrl] = useState("");
     const [title, setTitle] = useState("");
@@ -14,7 +14,7 @@ const NewLink = () => {
     const { user } = useContext(AuthContext);
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
         try {
             const newLink = await newLinkService(user.token, url, title, description);
@@ -26,6 +26,8 @@ const NewLink = () => {
 
             if (newLink) {
                 setShowModal(true); 
+                const data = await getLinksService(user.token);
+                setLinks(data)
             } else {
                 setError("No se pudo guardar el enlace");
             }
