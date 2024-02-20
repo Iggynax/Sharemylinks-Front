@@ -10,7 +10,13 @@ body {
 }
 
 .nodot {
+  display: flex;
+  justify-content: center;
   list-style: none;
+  padding-top: 10px;
+  padding-right: 20px;
+  margin-left: 60px;
+  text-align: center;
 }
 
 
@@ -199,7 +205,9 @@ p {
   .slider h1 {
     font-size: 5vw;
   }
-
+  .nodot {
+    margin-left: 40px;
+  }
   .nav h2,
   .slider h2 {
     font-size: 2vw;
