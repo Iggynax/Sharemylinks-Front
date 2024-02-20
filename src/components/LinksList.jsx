@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import LinkCard from "./LinkCard";
 import { AuthContext } from "../context/AuthContext";
 
-const LinksList = ({ links, onVoteUpdate, addLink }) => {
+const LinksList = ({ links, onVoteUpdate}) => {
   const { user } = useContext(AuthContext);
   return (
     <div>
@@ -15,7 +15,6 @@ const LinksList = ({ links, onVoteUpdate, addLink }) => {
                 link={link}
                 user={user}
                 onVoteUpdate={onVoteUpdate}
-                addLink={addLink}
               />
             </li>
           ))}

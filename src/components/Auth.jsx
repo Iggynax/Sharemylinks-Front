@@ -10,7 +10,7 @@ const Auth = () => {
     <ul className="nav-logout">
       {user ? (
         <>
-          <h4>¡Bienvenid@l{user.email}! </h4>
+          <h3>¡Bienvenid@ {user.email}! </h3>
           <a
             href="#"
             onClick={(e) => {
