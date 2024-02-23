@@ -1,51 +1,53 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from "react";
 import { getLinksService, newLinkService } from "../services";
 import { AuthContext } from "../context/AuthContext";
 import Modal from "../components/Modal/Modal";
 import { playClickBeep } from "../services";
 
-const NewLink = ({setLinks}) => {
-    const [error, setError] = useState("");
-    const [url, setUrl] = useState("");
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [showModal, setShowModal] = useState(false); 
-    const { user } = useContext(AuthContext);
+const NewLink = ({ setLinks }) => {
+  const [error, setError] = useState("");
+  const [url, setUrl] = useState("");
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [showForm, setShowForm] = useState(false); // Nuevo estado para controlar la visibilidad del formulario
+  const { user } = useContext(AuthContext);
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        try {
-            const newLink = await newLinkService(user.token, url, title, description);
-  
-            setUrl("");
-            setTitle("");
-            setDescription("");
-            setError("");
+    try {
+      const newLink = await newLinkService(user.token, url, title, description);
 
-            if (newLink) {
-                setShowModal(true); 
-                const data = await getLinksService(user.token);
-                setLinks(data)
-            } else {
-                setError("No se pudo guardar el enlace");
-            }
-        } catch (error) {
-            setError(error.message);
-        }
-    };
+      setUrl("");
+      setTitle("");
+      setDescription("");
+      setError("");
 
-    const handleCloseModal = () => {
-        setShowModal(false);
-    };
+      if (newLink) {
+        setShowModal(true);
+        const data = await getLinksService(user.token);
+        setLinks(data);
+      } else {
+        setError("No se pudo guardar el enlace");
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
-    return (
-        <>
-    <h2 className="nav-new">NEW LINK</h2>
-    
-      <form  className="nav-new-link" onSubmit={handleSubmit}>
-      
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const toggleForm = () => {
+    setShowForm(!showForm);
+  };
+
+  return (
+    <>
+      {showForm ? ( 
+        <form className="nav-new-link" onSubmit={handleSubmit}>
           <label htmlFor="url">URL:</label>
           <input
             type="text"
@@ -76,25 +78,35 @@ const NewLink = ({setLinks}) => {
             onChange={(e) => setDescription(e.target.value)}
             required
           />
-  
-        <button className="btn" onClick={playClickBeep}>
-          Guardar</button>
-        {error && <p>{error}</p>}
-      </form>
-  
-  {showModal && (
-    <div className="register-mail-modal">
-    <Modal onClose={handleCloseModal} className="register-content-modal">
-    <div className="register-content-modal">
+
+          <button className="btn" onClick={playClickBeep}>
+            Guardar
+          </button>
+          <button className="btn" type="button" onClick={toggleForm}>
+            Cancelar
+          </button>
+          {error && <p>{error}</p>}
+        </form>
+      ) : ( 
+        <button className="nav-new" onClick={toggleForm}>
+          <span className="material-symbols-outlined">Guarda add </span>  
+        </button>
+      )}
+
+      {showModal && (
+        <div className="register-mail-modal">
+          <Modal onClose={handleCloseModal} className="register-content-modal">
+            <div className="register-content-modal">
               <p className="register-content-modal">
-      Enlace guardado correctamente</p>
-      <button onClick={handleCloseModal}>OK</button>
-      </div>
-    </Modal>
-    </div>
-  )}
-        </>
-    );
+                Enlace guardado correctamente
+              </p>
+              <button onClick={handleCloseModal}>OK</button>
+            </div>
+          </Modal>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default NewLink;
