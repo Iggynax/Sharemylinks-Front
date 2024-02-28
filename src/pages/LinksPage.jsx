@@ -3,7 +3,7 @@ import LinksList from "../components/LinksList";
 import useLinks from "../hooks/useLinks";
 import NewLink from "../components/NewLink";
 import { AuthContext } from "../context/AuthContext";
-
+import "./LinksPage.css";
 const LinksPage = () => {
   const { links, setLinks, loading, error, reloadLinks } = useLinks(); // Ahora incluye reloadLinks
   const { user } = useContext(AuthContext);
@@ -20,10 +20,7 @@ const LinksPage = () => {
       {user && <NewLink setLinks={setLinks} />}
       {""}
       <p>ULTIMAS NOVEDADES</p>
-      <LinksList
-        links={links}
-        onVoteUpdate={handleVoteUpdate}  
-      />
+      <LinksList links={links} onVoteUpdate={handleVoteUpdate} />
     </section>
   );
 };

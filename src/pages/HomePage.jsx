@@ -9,7 +9,7 @@ function HomePage() {
     <>
       <section className="nav-container-modal">
         <a href="#" onClick={handleModal}>
-          ¿Olvidaste tu contraseña?, haz click AQUÍ.
+          RECUPERA TU CONTRASEÑA
         </a>{" "}
         {showModal && <PassRecovery handleModal={handleModal} />}
       </section>
