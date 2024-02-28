@@ -17,10 +17,10 @@ const Auth = () => {
               e.preventDefault();
               logout();
             }}
-            
           >
-            <span className="material-symbols-outlined"> Logout</span>
-
+            <div className="logout">
+              <span className="material-symbols-outlined"> Logout</span>
+            </div>
           </a>
         </>
       ) : (

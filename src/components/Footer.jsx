@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <footer>©️ ⛏️Jacawarriors-2024-</footer>;
+  return <footer>©️ ⛏️JDESIGN BY GERAL&NAX-2024-</footer>;
 };
 
 export default Footer;

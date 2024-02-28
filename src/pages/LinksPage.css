@@ -1,0 +1,192 @@
+/*estilos linkpage*/
+
+h3 {
+  color: #03dac6;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 30px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav-new {
+  position: absolute;
+  width: 100%;
+  height: 6%;
+  left: 0;
+  top: 30%;
+  margin-top: 100px;
+  background: #c53d78;
+  border-radius: 3px;
+  z-index: 10;
+}
+
+.nav-new-link {
+  position: sticky;
+  margin: auto;
+  padding: 40px;
+  bottom: 30px;
+  border: 1px solid #020202;
+  border-radius: 5px;
+  width: 50%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(29, 27, 27, 0.8);
+  z-index: 10;
+}
+
+.input-new {
+  width: 100%;
+  margin: 15px auto;
+  padding: 8px;
+  border: 1px solid #f328af;
+  border-radius: 7px;
+  background-color: #ffffff;
+}
+
+.link-card {
+  position: sticky;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 60%;
+  max-width: none;
+  height: 50%;
+  text-align: center;
+  background: rgba(216, 213, 213, 0.8);
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.link-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 15px rgba(255, 0, 157, 1);
+}
+
+.link-card h4 {
+  color: #010101;
+  margin-top: 10px;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 25px;
+}
+.link-card h5 {
+  font-family: "ROBOTO", sans-serif;
+  font-size: 20px;
+  color: #00ffee;
+  margin-top: 10px;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.link-card p {
+  color: #ffff00;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 15px;
+}
+
+.link-card a {
+  color: #f328af;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  max-width: 80%;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.error-page {
+  position: sticky;
+  padding: 20px;
+  max-width: none;
+  text-align: center;
+  z-index: 10;
+}
+
+.error-page h1 {
+  font-size: 7vh;
+}
+
+.error-page p {
+  color: rgb(39, 186, 186);
+  margin-top: 40px;
+  font-family: "ROBOTO", sans-serif;
+  font-size: 20px;
+}
+
+.error-page a {
+  color: #da03d6;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 915px) {
+  .nav h1 {
+    margin-top: -60px;
+  }
+  .nav-new {
+    position: absolute;
+    width: 100%;
+    height: 8%;
+    left: 0;
+    top: 25%;
+  }
+  .link-card {
+    width: 70%;
+  }
+
+  .nav-new-link {
+    margin-top: -100px;
+    width: 0%;
+  }
+  .logout {
+    margin-top: -10px;
+  }
+  .link-card h4 {
+    font-size: 20px;
+  }
+
+  .link-card h5 {
+    font-size: 18px;
+  }
+
+  .link-card p {
+    font-size: 15px;
+  }
+
+  .link-card a {
+    font-size: 20px;
+  }
+
+  a,
+  h4,
+  h5,
+  p {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 2vw;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .link-card {
+    margin-top: 10px;
+    width: 80%;
+    padding-bottom: 10px;
+    width: 80%;
+  }
+  h3 {
+    font-size: 8px;
+  }
+
+  .nav h1 {
+    margin-top: -60px;
+  }
+  .nav-new {
+    width: 100%;
+    height: 6%;
+    left: 0;
+    top: 15%;
+  }
+}
